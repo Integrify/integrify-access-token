@@ -17,7 +17,7 @@ integrifyToken.getToken = function(key, secret, integrifyURL, username, callback
     //create JWT
     var aud =  url.resolve(integrifyURL,"/oauth2/token")
 
-    var jwtoptions = {issuer: key, audience: aud, subject:username, role:"user"};
+    var jwtoptions = {issuer: key, audience: aud, subject:username, role:"user", expiresInMinutes: 60};
 
 
 
@@ -34,7 +34,7 @@ integrifyToken.getToken = function(key, secret, integrifyURL, username, callback
         }
 
         if (resp.statusCode != 200){
-            return callback("error:" + response.statusCode);
+            return callback("error:" + resp.statusCode);
         }
 
         callback(null,tokenObj)
