@@ -1,0 +1,13 @@
+{
+  "name": "integrify-access-token",
+  "version": "1.0.0",
+  "description": "Simple module for requesting an access token using a JWT",
+  "main": "index.js",
+  "author": "Integrify, Inc.",
+  "license": "ISC",
+  "dependencies": {
+    "jsonwebtoken": "^5.0.1",
+    "lodash": "^3.9.1",
+    "request": "^2.55.0"
+  }
+}
