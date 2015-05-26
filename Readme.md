@@ -5,7 +5,7 @@
 ### Installation:
 
 ```
-npm install integrify-acccess-token (soon...)
+npm install integrify-acccess-token 
 ```
 
 
