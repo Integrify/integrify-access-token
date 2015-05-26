@@ -4,10 +4,20 @@
   "description": "Simple module for requesting an access token using a JWT",
   "main": "index.js",
   "author": "Integrify, Inc.",
-  "license": "ISC",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=0.8.0"
+  },
   "dependencies": {
     "jsonwebtoken": "^5.0.1",
     "lodash": "^3.9.1",
     "request": "^2.55.0"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "should": "^6.0.3"
   }
 }

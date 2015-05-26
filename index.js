@@ -9,23 +9,33 @@ var integrifyToken = {};
 
 /*
 Options Supported:
-expiresInMinutes or expiresInSeconds
+key - your integrify applicatioj key
+secret - your integrify secret key
+integrifyURL - url of your integrify system
+username - the username of the Integrify user to grant the access token to,
+expiresInMinutes or expiresInSeconds - expiration for the token amount will be added to th eIAPT attribute of this JWT
 */
 
-integrifyToken.getToken = function(key, secret, integrifyURL, username, callback) {
-    //create a jwt
-    //create JWT
-    var aud =  url.resolve(integrifyURL,"/oauth2/token")
+// server - server token flow
+// this server creates a JWT and directly exchanges it for an access token
+integrifyToken.getTokenFromJWT = function(options, callback) {
 
-    var jwtoptions = {issuer: key, audience: aud, subject:username, role:"user", expiresInMinutes: 60};
+    var aud =  url.resolve(options.url,"/oauth2/token")
 
+    //expire in 60 minutes by default
+    var jwtoptions = {issuer: options.key, audience: aud, subject:options.username, role:"user", expiresInMinutes: 60};
+    if (options.expiresInMinutes) {
+        jwtoptions.expiresInMinutes = options.expiresInMinutes;
+    }
+    if (options.expiresInSeconds) {
+        delete jwtoptions.expiresInMinutes;
+        jwtoptions.expiresInSeconds = options.expiresInSeconds;
+    }
 
-
-    var token = jwt.sign({platform:"node.js"}, secret, jwtoptions);
+    var token = jwt.sign({platform:"node.js"}, options.secret, jwtoptions);
 
     var body = {grant_type:"urn:ietf:params:oauth:grant-type:jwt-bearer", assertion: token};
 
-    var ep = url.resolve(integrifyURL,key);
 
     request.post({url: aud, form: body}, function(err,resp,tokenObj){
 

@@ -1,6 +1,6 @@
 #integrify-access-token
 
-### Simple module for requesting an access token using a JWT
+### Simple module for requesting an access token
 
 ### Installation:
 
@@ -13,7 +13,8 @@ npm install integrify-acccess-token (soon...)
 
 ```
 var integrify-access-token = require('integrify-access-token');
-integrify-access-token.getToken("MyAPIKey","MySecret",'http://your.integrify.com','validusername', function(err,tokenObj) {
+var options = {key:"MyyAppKey",secret:"MySecret",url:"https://my.integrify.com",username:"MyUserName",expiresInMinutes: 60}
+integrify-access-token.getTokenFromJWT(options,function(err,tokenObj) {
     
     if (err) console.log(err);
 
