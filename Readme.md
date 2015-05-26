@@ -2,6 +2,8 @@
 
 ### Simple module for requesting an access token
 
+*** NOTE: Requires Integrify version  65.150.6001.001 or later
+
 ### Installation:
 
 ```
