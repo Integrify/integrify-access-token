@@ -13,7 +13,7 @@ key - your integrify application key
 secret - your integrify secret key
 integrifyURL - url of your integrify system
 username - the username of the Integrify user to grant the access token to,
-expiresInMinutes or expiresInSeconds - expiration for the token amount will be added to th eIAPT attribute of this JWT
+expiresInMinutes or expiresInSeconds - expiration for the token amount will be added to the IAPT attribute of this JWT
 */
 
 // server - server token flow
