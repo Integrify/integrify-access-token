@@ -9,7 +9,7 @@ var integrifyToken = {};
 
 /*
 Options Supported:
-key - your integrify applicatioj key
+key - your integrify application key
 secret - your integrify secret key
 integrifyURL - url of your integrify system
 username - the username of the Integrify user to grant the access token to,
