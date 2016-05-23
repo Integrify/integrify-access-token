@@ -23,14 +23,11 @@ integrifyToken.getTokenFromJWT = function(options, callback) {
     var aud =  url.resolve(options.url,"/oauth2/token")
 
     //expire in 60 minutes by default
-    var jwtoptions = {issuer: options.key, audience: aud, subject:options.username, role:"user", expiresInMinutes: 60};
-    if (options.expiresInMinutes) {
-        jwtoptions.expiresInMinutes = options.expiresInMinutes;
+    var jwtoptions = {issuer: options.key, audience: aud, subject:options.username, role:"user", expiresIn: 3600};
+    if (options.expiresIn) {
+        jwtoptions.expiresIn = options.expiresIn;
     }
-    if (options.expiresInSeconds) {
-        delete jwtoptions.expiresInMinutes;
-        jwtoptions.expiresInSeconds = options.expiresInSeconds;
-    }
+    
 
     var token = jwt.sign({platform:"node.js"}, options.secret, jwtoptions);
 
