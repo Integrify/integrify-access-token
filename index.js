@@ -41,7 +41,7 @@ integrifyToken.getTokenFromJWT = function(options, callback) {
         }
 
         if (resp.statusCode != 200){
-            return callback("error:" + resp.statusCode);
+            return callback("error:" + resp.statusCode, tokenObj);
         }
 
         callback(null,tokenObj)
