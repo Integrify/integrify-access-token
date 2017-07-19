@@ -23,7 +23,7 @@ integrifyToken.getTokenFromJWT = function(options, callback) {
     var aud =  url.resolve(options.url,"/oauth2/token")
 
     //expire in 60 minutes by default
-    var jwtoptions = {issuer: options.key, audience: aud, subject:options.username, role:"user", expiresIn: 3600};
+    var jwtoptions = {issuer: options.key, audience: aud, subject:options.username, role:"user"};
     if (options.expiresIn) {
         jwtoptions.expiresIn = options.expiresIn;
     }
