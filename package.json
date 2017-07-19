@@ -1,4 +1,5 @@
 {
+
   "name": "integrify-access-token",
   "version": "1.0.5",
   "description": "Simple module for requesting an access token using a JWT",
