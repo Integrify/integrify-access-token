@@ -1,6 +1,6 @@
 {
   "name": "integrify-access-token",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Simple module for requesting an access token using a JWT",
   "main": "index.js",
   "license": "Apache-2.0",
