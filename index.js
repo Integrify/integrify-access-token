@@ -23,7 +23,7 @@ integrifyToken.getTokenFromJWT = function(options, callback) {
     var aud =  url.resolve(options.url,"/oauth2/token")
 
 
-    var jwtoptions = {issuer: options.key, audience: aud, subject:options.username, role:"user"};
+    var jwtoptions = {issuer: options.key, audience: aud, subject:options.username};
     if (options.expiresIn) {
         jwtoptions.expiresIn = options.expiresIn;
     }

@@ -1,5 +1,4 @@
 {
-
   "name": "integrify-access-token",
   "version": "1.0.5",
   "description": "Simple module for requesting an access token using a JWT",
@@ -17,15 +16,15 @@
     "url": "https://github.com/Integrify/integrify-access-token/issues"
   },
   "dependencies": {
-    "jsonwebtoken": "^5.0.1",
-    "lodash": "^3.9.1",
-    "request": "^2.55.0"
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.10",
+    "request": "^2.87.0"
   },
   "scripts": {
     "test": "mocha test"
   },
   "devDependencies": {
-    "mocha": "^2.2.5",
-    "should": "^6.0.3"
+    "mocha": "^5.2.0",
+    "should": "^13.2.1"
   }
 }
